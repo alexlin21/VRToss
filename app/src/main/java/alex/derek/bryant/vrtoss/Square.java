@@ -65,7 +65,7 @@ public class Square {
 
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
-    float color[] = { 0.2f, 0.709803922f, 0.898039216f, 1.0f };
+    float color[] = { 255, 0, 0, 0.9f};
 
     /**
      * Sets up the drawing object data for use in an OpenGL ES context.
@@ -111,6 +111,7 @@ public class Square {
      */
     public void draw(float[] mvpMatrix) {
         // Add program to OpenGL environment
+
         GLES20.glUseProgram(mProgram);
 
         // get handle to vertex shader's vPosition member
@@ -127,6 +128,9 @@ public class Square {
 
         // Get handle to fragment shader's vColor member
         mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor");
+
+        GLES20.glEnable(GLES20.GL_BLEND);
+        GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
 
         // Set color for drawing the triangle
         GLES20.glUniform4fv(mColorHandle, 1, color, 0);

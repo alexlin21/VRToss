@@ -86,6 +86,7 @@ public class MainActivity extends GvrActivity implements GvrView.StereoRenderer 
     @Override
     public void onSurfaceCreated(EGLConfig eglConfig) {
         // Set the background frame color
+
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         mSquare = new Square();
     }
