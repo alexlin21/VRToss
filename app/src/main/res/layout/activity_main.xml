@@ -6,10 +6,18 @@
     android:layout_height="match_parent"
     tools:context="alex.derek.bryant.vrtoss.MainActivity">
 
+
+
     <com.google.vr.sdk.base.GvrView
         android:id="@+id/gvr_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
+<!--    <com.google.vr.sdk.widgets.pano.VrPanoramaView
+        android:id="@+id/living_room_pano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+-->
+
 </RelativeLayout>
